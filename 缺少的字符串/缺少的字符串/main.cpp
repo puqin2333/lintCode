@@ -29,12 +29,37 @@ public:
     vector<string> missingString(string str1, string str2) {
         // Write your code here
         vector<string> s;
+        vector<string> s1;
+        string word;
         for (int i = 0; i < str1.length(); i++) {
+            char letter = str1[i];
+            word.append(&letter);
             if (str1[i] == ' ') {
-                
+                s.push_back(word);
+                word = "";
+            }
+            if (i == str1.length() - 1) {
+                s.push_back(word);
+                word = "";
             }
         }
-        return s;
+        for (int i = 0; i < str2.length(); i++) {
+            char letter = str2[i];
+            word.append(&letter);
+            if (str2[i] == ' ' || i == str2.length() - 1 ) {
+                cout << word;
+                vector<string>::iterator p = s.begin();
+                while(p != s.end()) {
+                    if (word != *p) {
+                        s1.push_back(word);
+                        word = "";
+                        break;
+                    }
+                    p++;
+                }
+            }
+        }
+        return s1;
     }
 };
 int main(int argc, const char * argv[]) {
@@ -44,10 +69,10 @@ int main(int argc, const char * argv[]) {
     getline(cin, str1, '\n');
     getline(cin, str2, '\n');
     
-    vector<string> s = solution.missingString(str1, str2);
+    vector<string> s = solution.missingString(str2, str1);
     vector<string>::iterator p = s.begin();
     while(p != s.end()) {
-        cout << *p;
+        cout << *p << endl;
         p++;
     }
     return 0;
