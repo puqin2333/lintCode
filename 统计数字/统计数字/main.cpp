@@ -12,7 +12,6 @@
 /* 样例
  例如n=12，k=1，在 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]，我们发现1出现了5次 (1, 10, 11, 12)
  */
-
 #include <iostream>
 #include <vector>
 #include <sstream>
@@ -49,7 +48,7 @@ public:
     }
 };
 int main(int argc, const char * argv[]) {
-    
+
     Solution solution;
     int k,n;
     cin >> k >> n;
