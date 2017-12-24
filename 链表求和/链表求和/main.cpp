@@ -16,22 +16,109 @@ struct ListNode {
 
 class Solution {
     public:
-    void reverse(ListNode *head) {
-        ListNode *p, *q;
-        p = head->next;
-        head->next = NULL;
-        while (p) {
-            q = p;
-            p = p->next;
-            q->next = head->next;
-            head->next = q;
+    
+    // 非递归的方式
+    ListNode* reverse(ListNode *head) {
+        if (head == NULL || head -> next == NULL) {
+            return head;
         }
+        ListNode *p = NULL, *q = NULL;
+        while (head != NULL) {
+            p = head->next;
+            head->next = q;
+            q = head;
+            head = p;
+        }
+        return q;
+    }
+    // 递归的方式
+    ListNode* reverse_Recursion(ListNode *head) {
+        // 这块儿，大家可能有疑问，这里说明一下，第一个是异常判断，第二个是递归结束条件
+        if (head == NULL || head -> next == NULL) {
+            return head;
+        }
+        
+        ListNode *newHead = reverse_Recursion(head->next);
+        
+        head->next->next = head;
+        head->next = NULL;
+        
+        return newHead;
+    }
+    
+    void deleteNode(ListNode *head,ListNode* node) {
+        if (head == NULL && node == NULL) {
+            return;
+        }
+        if (node -> next != NULL ) {   // 一般正常情况
+            ListNode *nextNode = node ->next;
+            node->val = nextNode->val;
+            node->next = nextNode->next;
+            
+            delete nextNode;
+            nextNode = NULL;
+        } else if (head == node){    // 链表中只有一个节点
+            delete node;
+            node = NULL;
+            head = NULL;
+        } else {                        //          要删除的节点是尾节点
+            ListNode *p = head;
+            while (p->next != node) {
+                p = p->next;
+            }
+            
+            p->next = node->next;
+            delete node;
+            node = NULL;
+        }
+    }
+   // 直接在原链表上进行操作
+//    ListNode* swapPairs(ListNode* head) {
+//        ListNode *p = head->next, *s,*q,*ss;
+//        while (p!= NULL && p->next != NULL ) {
+//            if (p == head->next) {
+//                s = p->next;
+//                q = p->next->next;
+//                p->next = s->next;
+//                s->next = p;
+//                head->next = s;
+//                ss = p;
+//                p = q;
+//            } else {
+//                s = p->next;
+//                q = p->next->next;
+//                p->next = s->next;
+//                s->next = p;
+//                ss->next = s;
+//                ss = p;
+//                p = q;
+//            }
+//        }
+//        return head;
+//    }
+
+    // 新创建一个结点newHead
+    ListNode* swapPairs(ListNode *head) {
+        ListNode *newHead = new ListNode(0);
+        newHead->next = head->next;
+        ListNode *preNode = newHead, *curNode = head->next;
+        while (curNode != NULL && curNode->next != NULL) {
+            preNode->next = curNode->next;
+            curNode->next = preNode->next->next;
+            preNode->next->next = curNode;
+            preNode = curNode;
+            curNode = curNode->next;
+        }
+        
+        head = newHead;
+        delete newHead;
+        return head;
     }
     
     ListNode *addLists(ListNode *l1, ListNode *l2) {
         // write your code here
-        reverse(l1);
-        reverse(l2);
+//        reverse(l1);
+//        reverse(l2);
         int c = 0;
         int temp = 0;
         ListNode *head = new ListNode(0);
@@ -64,7 +151,7 @@ class Solution {
         if (c != 0) {
             p->next = new ListNode(c);
         }
-        reverse(head->next);
+//        reverse(head->next);
         return head->next;
     }
 };
@@ -94,21 +181,10 @@ void print(ListNode *head) {
     ListNode *s;
     s = head->next;
     while (s != NULL) {
-        cout << s->val << endl;
+        cout << s->val;
         s= s->next;
     }
-}
-
-void reverse(ListNode *head) {
-    ListNode *p, *q;
-    p = head->next;
-    head->next = NULL;
-    while (p) {
-        q = p;
-        p = p->next;
-        q->next = head->next;
-        head->next = q;
-    }
+    cout << endl;
 }
 
 int main(int argc, const char * argv[]) {
@@ -119,6 +195,7 @@ int main(int argc, const char * argv[]) {
     Solution solution;
     addList = solution.addLists(head1, head2);
     print(addList);
+    print(solution.swapPairs(addList));
     return 0;
 }
 

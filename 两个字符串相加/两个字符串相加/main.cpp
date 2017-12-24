@@ -30,11 +30,6 @@ public:
             int temp = 0;
             int a = b > c ? b : c;
             char num3[5100];
-//            if (a == b) {
-//                num3 = num1;
-//            }else {
-//                num3 = num2;
-//            }
             for (int i = a; i >= 0; i--) {
                 int s = 0;
                 if (b == 0) {
