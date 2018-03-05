@@ -23,7 +23,7 @@ using namespace std;
 class Solution {
 public:
     /**
-     * @param nums: The integer array.
+     * @param array: The integer array.
      * @param target: Target number to find.
      * @return: The first position of target. Position starts from 0.
      */

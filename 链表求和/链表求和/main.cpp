@@ -17,6 +17,19 @@ struct ListNode {
 class Solution {
     public:
     
+    // 奇偶节点交换
+    ListNode* oddEvenList(ListNode* head) {
+        if(head == NULL)    return NULL;
+        ListNode *oddNode = head, *evenNode = head->next, *evenHead = evenNode;
+        while (evenNode != NULL && evenNode->next != NULL) {
+            oddNode->next = evenNode->next;
+            oddNode = oddNode->next;
+            evenNode->next = oddNode->next;
+            evenNode = evenNode->next;
+        }
+        oddNode->next = evenHead;
+        return head;
+    }
     // 非递归的方式
     ListNode* reverse(ListNode *head) {
         if (head == NULL || head -> next == NULL) {
@@ -45,7 +58,7 @@ class Solution {
         
         return newHead;
     }
-    
+    // 删除节点
     void deleteNode(ListNode *head,ListNode* node) {
         if (head == NULL && node == NULL) {
             return;
@@ -71,6 +84,29 @@ class Solution {
             delete node;
             node = NULL;
         }
+    }
+//  链表中倒数第k个节点
+    ListNode* FindKthToTail(ListNode* head, unsigned int k) {
+        // 写一些简单算法的过程中，一定要注重代码的鲁棒性
+        if (head == NULL || k == 0) {
+            return NULL;
+        }
+        
+        ListNode* pAhead = head;
+        ListNode* pBehind = NULL;
+        for (int i = 0; i < k-1; ++i) {
+            if (pAhead -> next != NULL) {
+                pAhead = pAhead->next;
+            } else {
+                return NULL;
+            }
+        }
+        pBehind = head;
+        while (pAhead->next != NULL) {
+            pAhead = pAhead -> next;
+            pBehind = pBehind -> next;
+        }
+        return pBehind;
     }
    // 直接在原链表上进行操作
 //    ListNode* swapPairs(ListNode* head) {
@@ -191,11 +227,12 @@ int main(int argc, const char * argv[]) {
 
     ListNode *head1, *head2, *addList;
     head1 = creat();
-    head2 = creat();
+//    head2 = creat();
     Solution solution;
-    addList = solution.addLists(head1, head2);
-    print(addList);
-    print(solution.swapPairs(addList));
+//    addList = solution.addLists(head1, head2);
+//    print(addList);
+//    print(solution.swapPairs(addList));
+    print(solution.oddEvenList(head1));
     return 0;
 }
 

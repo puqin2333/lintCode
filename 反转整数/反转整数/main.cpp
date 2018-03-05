@@ -6,14 +6,17 @@
 //  Copyright © 2017年 满脸胡茬的怪蜀黍. All rights reserved.
 //
 
+
+/// reverse integer
+/// 题目描述：给定一个32位带符号整数，翻转该整数
+/// 题目思考：该题可以转化为简单的分解与组合整数的每一位的数字。需要注意的是32位带符号整数的溢出问题
+
+
 #include <iostream>
-#include <string>
-#include <sstream>
 using namespace std;
 
 class Solution {
 public:
-
     int reserveNumber(int num) {
         long reserveNum = 0;
         int temp = abs(num);
@@ -27,7 +30,6 @@ public:
         }
         return (int)(num >= 0 ? reserveNum :-reserveNum);
     }
-    
 };
 
 int main(int argc, const char * argv[]) {
