@@ -19,38 +19,31 @@ public:
      */
     string addStrings(string &num1, string &num2) {
         // write your code here
-        string res = "";
-        if (num1.empty()) {
-            return num2;
-        } else if (num2.empty()) {
-            return num1;
-        } else {
-            int b = (int)num1.length();
-            int c = (int)num2.length();
-            int temp = 0;
-            int a = b > c ? b : c;
-            char num3[5100];
-            for (int i = a; i >= 0; i--) {
-                int s = 0;
-                if (b == 0) {
-                    s = num2[--c] - '0' + temp;
-                    temp = 0;
-                } else if (c == 0) {
-                    s = num1[--b] - '0' + temp;
-                    temp = 0;
-                } else {
-                    s = num1[--b] + num2[--c] - '0' - '0' + temp;
-                    temp = 0;
-                }
-                if (s >= 10) {
-                    temp = s / 10;
-                    s = s % 10;
-                }
-                num3[i] =  s + '0';
-                res += num3[i];
-            }
+        int longLen = (int)max(num1.size(),num2.size());
+        int shortLen = (int)min(num1.size(),num2.size());
+        string n1 = num1.size() == longLen ? num1:num2;   //长度较长的串
+        string n2 = num2.size() == shortLen ? num2:num1;  //长度较短的串
+        int diffLen = longLen - shortLen;
+        int x =  0;    //进位
+        for(int i = shortLen - 1;i >= 0;i--) { //从两个串的末尾开始运算，运算shortLen位
+            n1[i+diffLen] = n1[i+diffLen] + n2[i] + x - '0' - '0';
+            x = n1[i+diffLen]/10;//保存进位
+            n1[i+diffLen] = n1[i+diffLen] % 10 + '0';
         }
-        return res;
+        //剩余的部分与进位处理
+        //如189+2，先处理9+2 然后在以下运算处理进位与前面18的加法运算
+        for(int j = longLen - shortLen - 1; j >= 0; j--) {
+            if(x == 0) break;
+            n1[j] = n1[j] + x - '0';
+            x = n1[j] / 10;//保存进位
+            n1[j] = n1[j] % 10 + '0';
+        }
+        if(x > 0) {
+            return '1' + n1;
+        }
+        else {
+            return n1;
+        }    
     }
 };
 
