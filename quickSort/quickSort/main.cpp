@@ -6,6 +6,11 @@
 //  Copyright © 2017年 Puqin.Chen. All rights reserved.
 //
 
+/// 快速排序的思路：
+///  要求：基准数 flag
+
+
+
 #include <iostream>
 #include <vector>
 
