@@ -22,21 +22,17 @@ using namespace std;
 
 class Solution {
 public:
-    /**
-     * @param array: The integer array.
-     * @param target: Target number to find.
-     * @return: The first position of target. Position starts from 0.
-     */
+
     int binarySearch(vector<int> &array, int target) {
         // write your code here
         
-        int mid = array.size() / 2;
-        int start = 0, end = array.size() - 1;
+        int mid = (int )array.size() / 2;
+        int start = 0, end = (int)array.size() - 1;
         if (array.size() == 0) {
             return -1;
         }
         while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
+            mid = start + (end - start) / 2;
             if (array[mid] >= target) {
                 end = mid;
             } else {
