@@ -32,7 +32,7 @@ public:
 
 int main(int argc, const char * argv[]) {
     string s;
-    cin >> s;
+    getline(cin,s,'\n');
     Solution solution;
     cout << solution.lengthOfLastWord(s) << endl;
     return 0;
