@@ -27,20 +27,21 @@ public:
         }
         return stepCount(n - 1) + stepCount(n - 2);
     }
-    /// 一趟 while 循环算法
+    /// 一趟 while 循环算法，从下往上计算
+    ///
     int climbStairsFast(int n) {
         if (n <= 0) {
             return 0;
         }
-        int a = 1, b = 1;
+        int stepSum = 1, stepNext = 1;
         while (n--) {
-            b += a;
-            a = b - a;
+            stepNext += stepSum;
+            stepSum = stepNext - stepSum;
             if (n <= 0) {
                 break;
             }
         }
-        return a;
+        return stepSum;
     }
 };
 
