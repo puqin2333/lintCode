@@ -198,7 +198,6 @@ ListNode *creat() {
     head->next = NULL;
     ListNode *p = head;
     int c;
-    
     while (1) {
         cin >> c;
         if (c == -1) {

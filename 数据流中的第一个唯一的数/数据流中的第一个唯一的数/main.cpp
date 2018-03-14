@@ -16,8 +16,7 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
-#include <list>
+
 using namespace std;
 
 class Solution {
@@ -27,54 +26,54 @@ public:
      * @param : a number
      * @return: returns the first unique number
      */
-    int firstUniqueNumber(vector<int> nums, int number) {
-        // Write your code here
-        vector<int>::iterator p = nums.begin();
-        map<int , int> numberCount;
-        list<int> uniqueNumber;
-        map<int, int>::iterator m = numberCount.begin();
-        list<int>::iterator l = uniqueNumber.begin();
-        bool isFindStopNumber = false;
-        vector<int>::iterator s = nums.begin();
-
-//        while(p != nums.end()) {
-//            numberCount.insert(pair<int, int>(*p,));
-//        }
-        return 0;
-    }
 //    int firstUniqueNumber(vector<int> nums, int number) {
 //        // Write your code here
 //        vector<int>::iterator p = nums.begin();
+//        map<int , int> numberCount;
+//        list<int> uniqueNumber;
+//        map<int, int>::iterator m = numberCount.begin();
+//        list<int>::iterator l = uniqueNumber.begin();
+//        bool isFindStopNumber = false;
 //        vector<int>::iterator s = nums.begin();
-//        int num[10] = {0};
-//        int flag = 0 ,m = 1;
-//        while(p != nums.end()) {
-//            if (*p != number) {
-//                p++;
-//            } else {
-//                flag = 1;
-//                break;
-//            }
-//        }
-//        if (flag != 1) {
-//            return -1;
-//        }
-//        while(*s != *p) {
-//            num[*s] = m;
-//            s++;
-//            m++;
-//        }
-//        flag = 0;
-//        int min = 9;
-//        for (int i = 1; i < 10; i++) {
-//            if (num[i] != 0) {
-//                if(num[i] < min){
-//                    min = num[i];
-//                }
-//            }
-//        }
-//        return min;
+//
+////        while(p != nums.end()) {
+////           · numberCount.insert(pair<int, int>(*p,));
+////        }
+//        return 0;
 //    }
+    int firstUniqueNumber(vector<int> nums, int number) {
+        // Write your code here
+        vector<int>::iterator p = nums.begin();
+        vector<int>::iterator s = nums.begin();
+        int num[10] = {0};
+        int flag = 0 ,m = 1;
+        while(p != nums.end()) {
+            if (*p != number) {
+                p++;
+            } else {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag != 1) {
+            return -1;
+        }
+        while(*s != *p) {
+            num[*s] = m;
+            s++;
+            m++;
+        }
+        flag = 0;
+        int min = 9;
+        for (int i = 1; i < 10; i++) {
+            if (num[i] != 0) {
+                if(num[i] < min){
+                    min = num[i];
+                }
+            }
+        }
+        return min;
+    }
 };
 
 int main(int argc, const char * argv[]) {
