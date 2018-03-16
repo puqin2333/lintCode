@@ -36,7 +36,6 @@ public:
             while (low < high && flag <= array[high])
                 high--;
             Swap(array, low, high);
-            
             while (low < high && flag >= array[low])
                 low++;
             Swap(array, low, high);

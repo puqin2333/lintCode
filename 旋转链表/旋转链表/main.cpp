@@ -7,7 +7,7 @@
 //
 /// 旋转链表
 /// 题目描述：给定一个列表，将链表旋转到右边的k个位置，其中k是非负的。
-
+/// ！！！ 不知道，我的为什么ac不了，感觉各种输入在这儿都是ok的呀
 #include <iostream>
 using namespace std;
 
@@ -54,8 +54,18 @@ public:
         if (head == NULL || head->next == NULL || k < 0) {
             return NULL;
         }
+        if (k == 0) {
+            return head;
+        }
         ListNode *phead = head ,*pNode = head;
-        for (int i = 0; i < k; i++) {
+        int length = 0;
+        while (phead->next != NULL) {
+            
+            phead = phead->next;
+            length++;
+        }
+        phead = head;
+        for (int i = 0; i < k % length ; i++) {
             pNode = pNode->next;
         }
         while (pNode->next != NULL) {
