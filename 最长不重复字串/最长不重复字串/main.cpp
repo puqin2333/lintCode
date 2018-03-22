@@ -23,9 +23,12 @@ using namespace std;
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
+        // start 的作用是记录第一个不重复的字符的下标，如果出现重复字符，则 start 进行改变
         int start = -1, maxLength = 0;
+        // 创建一个哈希表，来存储字符串，key 为 字符， value 为字符出现的下标
         vector<int> table(256, -1);
         for (int i = 0;  i < s.length(); i++) {
+            // 默认start 为-1，
             if (table[s[i]] > start) {
                 start = table[s[i]];
             }
@@ -35,10 +38,90 @@ public:
         return maxLength;
     }
 };
+
+class Solution1 {
+public:
+    int minNumberofString(string s) {
+        int minNumber = 0;
+        vector<int> hashTable(10,0);
+        vector<int> noNumber;
+        for (int i = 0; i < s.length(); i++) {
+            if (s[i] < '0' || s[i] > '9') {
+                return 0;
+            }
+            hashTable[s[i] - '0'] ++;
+        }
+        for (int i = 0; i < hashTable.size(); i++) {
+            if (hashTable[i] == 0) {
+                noNumber.push_back(hashTable[i]);
+            }
+        }
+        int min = 0;
+        for (int i = 0; i < noNumber.size(); i++) {
+            if (noNumber[i] != 0 ) {
+                return noNumber[i];
+            } else {
+                return min * 10 + 0;
+            }
+        }
+        return 0;
+    };
+    int distanceSum(string s, string t) {
+        int sum = 0;
+        for (int i = t.length(); i <= s.length(); i++) {
+            sum += distanceSumOfTwoString(t, s.substr(i - t.length(), i));
+        }
+        return sum;
+    };
+private:
+    int distanceSumOfTwoString(string s, string t) {
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s[i] != t[i]) {
+                sum ++;
+            }
+        }
+        return sum;
+    }
+};
 int main(int argc, const char * argv[]) {
-    string s;
+    string s, t;
     cin >> s;
-    Solution solution;
-    cout << solution.lengthOfLongestSubstring(s) << endl;
+    cin >> t;
+    Solution1 solution1;
+    cout << solution1.distanceSum(s, t) << endl;
+
+    vector<int> num(10,0);
+    for (int i = 0; i < s.length(); i++) {
+        num[s[i] - 48] ++;
+    }
+    int min=1,min1 =1;
+    int minNum = num[1], minNum1 = num[1];
+    for (int i=0;i<10;i++) {
+        if (num[i]<minNum) {
+            min = i;
+            minNum = num[i];
+        } else if (min ==0 && i!=0 && num[i] == minNum){
+                min = i;
+                minNum = num[i];
+        }
+        if (i != 0) {
+            if (num[i] <minNum1) {
+                minNum1 = num[i];
+                min1 = i;
+            }
+        }
+    }
+    if (min == 0 && minNum1!=0){
+        cout << 1;
+    }
+    if (minNum1 != 0) {
+        for (int i = 0; i <= minNum; i++) {
+            cout << min;
+        }
+    } else {
+        cout << min1;
+    }
     return 0;
 }
+

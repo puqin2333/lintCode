@@ -7,7 +7,8 @@
 //
 
 #include <iostream>
-#include <string.h>
+#include <string>
+#include <vector>
 using namespace std;
 class Solution {
 public:
@@ -15,22 +16,41 @@ public:
      * @param s: a string which consists of lowercase or uppercase letters
      * @return: the length of the longest palindromes that can be built
      */
-    int longestPalindrome(string s) {
-        int sum = 0;
-        int *letterCount = new int[60];
-        string::iterator p = s.begin();
-        while (p != s.end()) {
-            letterCount[*p - 'A']++;
+    // 最长回文子串
+    string longestPalindrome(string s) {
+        if (s.empty() == 0) {
+            return "";
         }
-        while (*letterCount != '\0') {
-            if(*letterCount !=0 && *letterCount % 2 == 0)  {
-                sum += *letterCount;
+        if (s.length() == 1) {
+            return  s;
+        }
+        vector<string> sub1 = subString(s);
+        s.reserve();
+        vector<string> sub2 = subString(s);
+        for (int i = 0; i < sub2.size(); i++) {
+            for (int j = 0; j < sub2.size(); j++) {
+                if ( ) {
+                    <#statements#>
+                }
             }
         }
-        return sum;
+    }
+private:
+    vector<string> subString(string s) {
+        vector<string> subStr;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 1; j < s.length(); j++) {
+                subStr[i] = s.substr(i,s.length() - j);
+            }
+        }
+        return subStr;
     }
 };
 int main(int argc, const char * argv[]) {
+    Solution solution;
+    string s;
+    cin >> s;
+    cout << solution.longestPalindrome(s) << endl;
     
     return 0;
 }
