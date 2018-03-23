@@ -21,11 +21,13 @@
  
  
  样例输入
- 55
+ 55 112334556778990 1234567890 1122334455667788990
  
  样例输出
- 1
+ 1 22 11100
  */
+
+// 解法分析： 特殊问题分布判断
 #include <iostream>
 #include <string>
 #include <vector>
@@ -34,13 +36,67 @@ using namespace std;
 
 class Solution {
 public:
-    int noMinNumber(string s) {
-        int ss;
-        return 0;
+    void noMinNumberOfString(string s) {
+        vector<int> hashTable(10,0);
+        vector<int> noNumber;
+        for (int i = 0; i < s.length(); i++) {
+            if (s[i] < '0' || s[i] > '9') {
+                return;
+            }
+            hashTable[s[i] - '0'] ++;
+        }
+        for (int i = 0; i < 10; i++) {
+            if (hashTable[i] == 0) {
+                noNumber.push_back(i);
+            }
+        }
+        bool flag_isOnlyZero = false;
+        for (int i = 0; i < noNumber.size(); i++) {
+            if (noNumber[i]) {
+                cout << noNumber[i];
+                break;
+            } else {
+                if (noNumber.size() == 1 && noNumber[i] == 0) {
+                    flag_isOnlyZero = true;
+                }
+            }
+        }
+        if (flag_isOnlyZero) {
+            cout << 10;
+        }
+        bool flag_isAllSameTime = false;
+        int minLetterTime = hashTable[0], minLetter = 9;
+        if (noNumber.size() == 0) {
+            for (int i = 0; i < 10; i++) {
+                if(minLetterTime >= hashTable[i]) {
+                    minLetterTime = hashTable[i];
+                    if (minLetter > i) {
+                        minLetter = i;
+                    }
+                    flag_isAllSameTime = true;
+                }
+            }
+            if (!flag_isAllSameTime) {
+                for (int i = 0; i <= minLetterTime; i++) {
+                    cout << 1;
+                }
+            } else {
+                if (minLetter == 0) {
+                    cout << 1;
+                }
+                for (int i = 0; i <= minLetterTime; i++) {
+                    cout << minLetter;
+                }
+            }
+        }
     }
 };
 
 int main(int argc, const char * argv[]) {
-    ;
+    string s;
+    cin >> s;
+    Solution solution;
+    solution.noMinNumberOfString(s);
+    
     return 0;
 }
