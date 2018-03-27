@@ -85,15 +85,75 @@ public:
     }
     
     /// 交换类排序：对待排序记录的关键字两两比较，只要发现两个记录为逆序就交换，直到没有逆序的记录为止。冒泡和快排就是交换类排序。
+    /* 冒泡排序：又称相邻比邻排序，即在扫描待排序记录序列时，顺次比较相邻两个记录大小，如果逆序就交换位置。
+        时间复杂度：最小的时间代价为o(n)，一般为 o(n^2)
+        空间复杂度：o(1)
+        稳定性：稳定
+        优化：设置 flag 标志，用来标志是否进行交换操作，从而跟踪序列是否已经有序。
+     */
+    void bubbleSort(int *array, int length) {
+        int flag = 1,temp = 0;
+        for (int i = 0; i < length && flag; i++) {
+            flag = 0;
+            for (int j = 0; j < length - i; j++) {
+                if (array[j] > array[j+1]) {
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j + 1] = temp;
+                    flag = 1;
+                }
+            }
+        }
+    }
+    /* 快速排序：从待排序序列中任意选择一个记录，以该记录的关键字作为“枢纽”，凡其关键字小于枢纽的记录均移动至该记录之前，反之，凡是关键字大于枢轴的记录均移动至该记录之后。致使一趟排序之后，记录的无序序列 r[1..n]  将分割成左右两个子序列，然后分别对分割所得两个子序列递归地进行快速排序，以此类推，直到每个子序列中只含一个记录为止。
+        时间复杂度：平均时间复杂度为o(nlog2n)，最差时间复杂度为 o(n^2)
+        空间复杂度：o(log2n)
+        稳定性：不稳定
+        优化：枢轴值的选取
+     */
+    void qSort(int *array, int low, int high) {
+        int flag = 0;
+        if (low < high) {
+            flag = partition(array, low, high);
+            qSort(array, low, flag - 1);
+            qSort(array, flag + 1, high);
+        }
+    }
     
+    int partition(int *array, int low, int high) {
+        int flag = array[low];
+        while (low < high) {
+            while (low < high && flag <= array[high] ) {
+                high--;
+            }
+            Swap(array, low, high);
+            while (low < high && flag >= array[low] ) {
+                low++;
+            }
+            Swap(array, low, high);
+        }
+        return low;
+    }
     
-    
+    void Swap(int *array,int low,int high) {
+        int temp = array[low];
+        array[low] = array[high];
+        array[high] = temp;
+    }
+    /// 选择类排序：在第i趟的记录序列中选取关键字第 i 小的记录作为有序序列的第 i 个记录。该类算法的关键就在于如何从剩余的待排序序列中找出最小或最大的那个记录。
+    /* 简单选择排序：
+        时间复杂度：平均时间复杂度为o(nlog2n)，最差时间复杂度为 o(n^2)
+        空间复杂度：o(log2n)
+        稳定性：不稳定
+        优化：枢轴值的选取
+     */
 };
 
 int main(int argc, const char * argv[]) {
     int array[10] = {27, 8, 32, 11, 14, 6, 9, 18, 31, 88};
     Sort sorts;
-    sorts.shellSort(array, 10);
+    sorts.bubbleSort(array, 10);
+    sorts.qSort(array, 0, 9);
     for (int i = 0; i < 10; i++) {
         cout << array[i] << endl;
     }

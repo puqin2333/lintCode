@@ -25,7 +25,7 @@ public:
     void Qsort(vector<int> &array, int low, int high) {
         int flag;
         if (low < high) {
-            flag = Partition(array, low, high);
+            flag = (array, low, high);
             Qsort(array, low, flag - 1);
             Qsort(array, flag + 1, high);
         }
