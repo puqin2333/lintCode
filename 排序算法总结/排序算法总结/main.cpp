@@ -37,7 +37,7 @@ public:
         稳定性：稳定
         优点：改善了关键字的比较次数
      */
-    void BiInsertSort(int *array, int length) {
+    void biInsertSort(int *array, int length) {
         int flag = 0;
         int i = 0, j = 0, low = 0, high = 0, mid = 0;
         for (i = 1; i < length; i++) {
@@ -142,18 +142,102 @@ public:
     }
     /// 选择类排序：在第i趟的记录序列中选取关键字第 i 小的记录作为有序序列的第 i 个记录。该类算法的关键就在于如何从剩余的待排序序列中找出最小或最大的那个记录。
     /* 简单选择排序：
-        时间复杂度：平均时间复杂度为o(nlog2n)，最差时间复杂度为 o(n^2)
-        空间复杂度：o(log2n)
+        时间复杂度：时间复杂度为 o(n^2)
+        空间复杂度：o(1)
         稳定性：不稳定
-        优化：枢轴值的选取
      */
+    void selectSort(int * array, int length) {
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (array[j] < array[i] ) {
+                    Swap(array, j, i);
+                }
+            }
+        }
+    }
+    /* 堆排序：堆的结构类似于完全二叉树，每个结点的值都小于或者等于其左右孩子结点的值，或者每个节点的值都大于或等于其左右孩子的值；堆排序过程将待排序的序列构造成一个堆，选出堆中最大的移走，再把剩余的元素调整成堆，找出最大的再移走，重复直至有序
+        时间复杂度：时间复杂度为 o(nlog2n)
+        空间复杂度：o(1)
+        稳定性：不稳定
+      */
+    void heapSort(int *array, int length) {
+        for (int i = length / 2 - 1 ; i >= 0; --i ) {
+            heapify(array, i , length);
+        }
+        for (int i = length - 1; i > 0; --i) {
+            Swap(array, 0, i);
+            heapify(array, 0, i);
+        }
+    }
+
+    void heapify(int *array, int first, int end) {
+        int father = first;
+        int son = father * 2 + 1;
+        while (son < end) {
+            if (son + 1 < end && array[son] < array[son + 1]) {
+                son++;
+            }
+            // 如果父节点大于子节点则表示调整完毕
+            if (array[father] > array[son]) {
+                break;
+            }
+            else {
+                Swap(array, son, father);
+                // 父和子节点变成下一个要比较的位置
+                father = son;
+                son = father * 2 + 1;
+            }
+        }
+    }
+    
+    /// 归并排序：首先将原始无序序列划分为两个子序列，然后分别对每个子序列递归地进行排序，最后再将有序子序列合并
+    /* 二路归并排序：首先将初始序列的n 个记录看成是n个有序的子序列每个子序列的长度为1，然后两两归并。
+        时间复杂度：时间复杂度为 o(nlog2n)
+        空间复杂度：o(n)
+        稳定性：稳定
+     */
+    void Merge(int arr[], int reg[], int start, int end) {
+        if (start >= end) {
+             return;
+        }
+        int len = end - start, mid = (len >> 1) + start;
+        
+        int start1 = start, end1 = mid;
+        int start2 = mid + 1, end2 = end;
+        
+        Merge(arr, reg, start1, end1);
+        Merge(arr, reg, start2, end2);
+        
+        
+        int k = start;
+        
+        while (start1 <= end1 && start2 <= end2){
+            reg[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
+        }
+        
+        while (start1 <= end1){
+            reg[k++] = arr[start1++];
+        }
+        while (start2 <= end2){
+            reg[k++] = arr[start2++];
+        }
+        for (k = start; k <= end; k++) {
+            arr[k] = reg[k];
+        }
+    }
+    
+    void MergeSort(int *array, int length) {
+        int  reg[length];
+        Merge(array, reg, 0, length - 1);
+    }
+    
 };
 
 int main(int argc, const char * argv[]) {
     int array[10] = {27, 8, 32, 11, 14, 6, 9, 18, 31, 88};
     Sort sorts;
-    sorts.bubbleSort(array, 10);
-    sorts.qSort(array, 0, 9);
+    sorts.heapSort(array, 10);
+//    sorts.qSort(array, 0, 9);
     for (int i = 0; i < 10; i++) {
         cout << array[i] << endl;
     }
