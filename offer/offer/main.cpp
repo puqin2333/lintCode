@@ -108,18 +108,20 @@
 //}
 
 #include <stdio.h>
+#include <math.h>
 
 int main(void) {
-    int i, j;
-    scanf("%d %d", &i, &j);
-    int ii = (i - 1) % 3;
-    int jj = (j - 1) % 3;
-
-    int x = i + (3 - ii);
-    int y = j - jj;
-    int z = (y - x) / 3 * 2;
-
-    printf("%d\n", z + (3 - ii) + jj);
+    int t, r, g, b;
+    scanf("%d", &t);
+    while (t > 0 ) {
+        scanf("%d %d %d", &r, &g, &b);
+        int x = (r + g + b) / 3;
+        if (abs(r - g)  > 1 || abs(g - b) > 1 || abs(r - b) > 1) {
+            int  x
+        }
+        printf("%d\n",x);
+        t--;
+    }
     return 0;
 }
 
