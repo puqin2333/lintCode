@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7426CD1A207306C0002118BE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7426CD19207306C0002118BE /* main.cpp */; };
+		74E39D8D207B871900D47F6C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E39D8C207B871900D47F6C /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7426CD14207306C0002118BE /* CopyFiles */ = {
+		74E39D87207B871800D47F6C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7426CD16207306C0002118BE /* 词法分析器 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "词法分析器"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7426CD19207306C0002118BE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		74E39D89207B871800D47F6C /* 京东笔试 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "京东笔试"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74E39D8C207B871900D47F6C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7426CD13207306C0002118BE /* Frameworks */ = {
+		74E39D86207B871800D47F6C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,94 +38,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7426CD0D207306C0002118BE = {
+		74E39D80207B871800D47F6C = {
 			isa = PBXGroup;
 			children = (
-				7426CD18207306C0002118BE /* 词法分析器 */,
-				7426CD17207306C0002118BE /* Products */,
+				74E39D8B207B871800D47F6C /* 京东笔试 */,
+				74E39D8A207B871800D47F6C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7426CD17207306C0002118BE /* Products */ = {
+		74E39D8A207B871800D47F6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7426CD16207306C0002118BE /* 词法分析器 */,
+				74E39D89207B871800D47F6C /* 京东笔试 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7426CD18207306C0002118BE /* 词法分析器 */ = {
+		74E39D8B207B871800D47F6C /* 京东笔试 */ = {
 			isa = PBXGroup;
 			children = (
-				7426CD19207306C0002118BE /* main.cpp */,
+				74E39D8C207B871900D47F6C /* main.cpp */,
 			);
-			path = "词法分析器";
+			path = "京东笔试";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7426CD15207306C0002118BE /* 词法分析器 */ = {
+		74E39D88207B871800D47F6C /* 京东笔试 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7426CD1D207306C0002118BE /* Build configuration list for PBXNativeTarget "词法分析器" */;
+			buildConfigurationList = 74E39D90207B871900D47F6C /* Build configuration list for PBXNativeTarget "京东笔试" */;
 			buildPhases = (
-				7426CD12207306C0002118BE /* Sources */,
-				7426CD13207306C0002118BE /* Frameworks */,
-				7426CD14207306C0002118BE /* CopyFiles */,
+				74E39D85207B871800D47F6C /* Sources */,
+				74E39D86207B871800D47F6C /* Frameworks */,
+				74E39D87207B871800D47F6C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "词法分析器";
-			productName = "词法分析器";
-			productReference = 7426CD16207306C0002118BE /* 词法分析器 */;
+			name = "京东笔试";
+			productName = "京东笔试";
+			productReference = 74E39D89207B871800D47F6C /* 京东笔试 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7426CD0E207306C0002118BE /* Project object */ = {
+		74E39D81207B871800D47F6C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Puqin.Chen;
 				TargetAttributes = {
-					7426CD15207306C0002118BE = {
+					74E39D88207B871800D47F6C = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = 7426CD11207306C0002118BE /* Build configuration list for PBXProject "词法分析器" */;
+			buildConfigurationList = 74E39D84207B871800D47F6C /* Build configuration list for PBXProject "京东笔试" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7426CD0D207306C0002118BE;
-			productRefGroup = 7426CD17207306C0002118BE /* Products */;
+			mainGroup = 74E39D80207B871800D47F6C;
+			productRefGroup = 74E39D8A207B871800D47F6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7426CD15207306C0002118BE /* 词法分析器 */,
+				74E39D88207B871800D47F6C /* 京东笔试 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7426CD12207306C0002118BE /* Sources */ = {
+		74E39D85207B871800D47F6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7426CD1A207306C0002118BE /* main.cpp in Sources */,
+				74E39D8D207B871900D47F6C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7426CD1B207306C0002118BE /* Debug */ = {
+		74E39D8E207B871900D47F6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -183,7 +183,7 @@
 			};
 			name = Debug;
 		};
-		7426CD1C207306C0002118BE /* Release */ = {
+		74E39D8F207B871900D47F6C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +234,7 @@
 			};
 			name = Release;
 		};
-		7426CD1E207306C0002118BE /* Debug */ = {
+		74E39D91207B871900D47F6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -243,7 +243,7 @@
 			};
 			name = Debug;
 		};
-		7426CD1F207306C0002118BE /* Release */ = {
+		74E39D92207B871900D47F6C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -255,25 +255,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7426CD11207306C0002118BE /* Build configuration list for PBXProject "词法分析器" */ = {
+		74E39D84207B871800D47F6C /* Build configuration list for PBXProject "京东笔试" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7426CD1B207306C0002118BE /* Debug */,
-				7426CD1C207306C0002118BE /* Release */,
+				74E39D8E207B871900D47F6C /* Debug */,
+				74E39D8F207B871900D47F6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7426CD1D207306C0002118BE /* Build configuration list for PBXNativeTarget "词法分析器" */ = {
+		74E39D90207B871900D47F6C /* Build configuration list for PBXNativeTarget "京东笔试" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7426CD1E207306C0002118BE /* Debug */,
-				7426CD1F207306C0002118BE /* Release */,
+				74E39D91207B871900D47F6C /* Debug */,
+				74E39D92207B871900D47F6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7426CD0E207306C0002118BE /* Project object */;
+	rootObject = 74E39D81207B871800D47F6C /* Project object */;
 }
