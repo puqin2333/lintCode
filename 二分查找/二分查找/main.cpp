@@ -31,21 +31,20 @@ public:
         if (array.size() == 0) {
             return -1;
         }
-        while (start + 1 < end) {
-            mid = start + (end - start) / 2;
-            if (array[mid] >= target) {
-                end = mid;
+        while (start <=  end) {
+            mid = (start + end) / 2; // 折半查找
+            // 插值查找：根据要查找的关键字 key 与查找表只能够最大最小记录的关键字比较后的查找方法，
+            // 其核心就是插值公式： (key-a[low])/(a[high]-a[low])
+            // mid = start + (target - array[start])/ (array[end] - array[start]);
+            if (array[mid] > target) {
+                end = mid - 1;
+            } else if (array[mid] < target){
+                start = mid + 1;
             } else {
-                start = mid;
+                return array[mid];
             }
         }
-        if (array[start] == target) {
-            return start;
-        }
-        if (array[end] == target) {
-            return end;
-        }
-        return -1;
+        return 0;
     }
 };
 
