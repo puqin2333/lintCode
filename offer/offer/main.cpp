@@ -116,9 +116,9 @@ int main(void) {
     while (t > 0 ) {
         scanf("%d %d %d", &r, &g, &b);
         int x = (r + g + b) / 3;
-        if (abs(r - g)  > 1 || abs(g - b) > 1 || abs(r - b) > 1) {
-            int  x
-        }
+//        if (abs(r - g)  > 1 || abs(g - b) > 1 || abs(r - b) > 1) {
+//            int  x
+//        }
         printf("%d\n",x);
         t--;
     }
