@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		740AE591208B2A39009430F9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 740AE590208B2A39009430F9 /* main.cpp */; };
+		74C02DC0208CD0C2009AB0F0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74C02DBF208CD0C2009AB0F0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		740AE58B208B2A39009430F9 /* CopyFiles */ = {
+		74C02DBA208CD0C2009AB0F0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		740AE58D208B2A39009430F9 /* 买卖股票 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "买卖股票"; sourceTree = BUILT_PRODUCTS_DIR; };
-		740AE590208B2A39009430F9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		74C02DBC208CD0C2009AB0F0 /* array */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = array; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C02DBF208CD0C2009AB0F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		740AE58A208B2A39009430F9 /* Frameworks */ = {
+		74C02DB9208CD0C2009AB0F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,94 +38,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		740AE584208B2A39009430F9 = {
+		74C02DB3208CD0C2009AB0F0 = {
 			isa = PBXGroup;
 			children = (
-				740AE58F208B2A39009430F9 /* 买卖股票 */,
-				740AE58E208B2A39009430F9 /* Products */,
+				74C02DBE208CD0C2009AB0F0 /* array */,
+				74C02DBD208CD0C2009AB0F0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		740AE58E208B2A39009430F9 /* Products */ = {
+		74C02DBD208CD0C2009AB0F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				740AE58D208B2A39009430F9 /* 买卖股票 */,
+				74C02DBC208CD0C2009AB0F0 /* array */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		740AE58F208B2A39009430F9 /* 买卖股票 */ = {
+		74C02DBE208CD0C2009AB0F0 /* array */ = {
 			isa = PBXGroup;
 			children = (
-				740AE590208B2A39009430F9 /* main.cpp */,
+				74C02DBF208CD0C2009AB0F0 /* main.cpp */,
 			);
-			path = "买卖股票";
+			path = array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		740AE58C208B2A39009430F9 /* 买卖股票 */ = {
+		74C02DBB208CD0C2009AB0F0 /* array */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 740AE594208B2A39009430F9 /* Build configuration list for PBXNativeTarget "买卖股票" */;
+			buildConfigurationList = 74C02DC3208CD0C2009AB0F0 /* Build configuration list for PBXNativeTarget "array" */;
 			buildPhases = (
-				740AE589208B2A39009430F9 /* Sources */,
-				740AE58A208B2A39009430F9 /* Frameworks */,
-				740AE58B208B2A39009430F9 /* CopyFiles */,
+				74C02DB8208CD0C2009AB0F0 /* Sources */,
+				74C02DB9208CD0C2009AB0F0 /* Frameworks */,
+				74C02DBA208CD0C2009AB0F0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "买卖股票";
-			productName = "买卖股票";
-			productReference = 740AE58D208B2A39009430F9 /* 买卖股票 */;
+			name = array;
+			productName = array;
+			productReference = 74C02DBC208CD0C2009AB0F0 /* array */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		740AE585208B2A39009430F9 /* Project object */ = {
+		74C02DB4208CD0C2009AB0F0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Puqin.Chen;
 				TargetAttributes = {
-					740AE58C208B2A39009430F9 = {
+					74C02DBB208CD0C2009AB0F0 = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = 740AE588208B2A39009430F9 /* Build configuration list for PBXProject "买卖股票" */;
+			buildConfigurationList = 74C02DB7208CD0C2009AB0F0 /* Build configuration list for PBXProject "array" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 740AE584208B2A39009430F9;
-			productRefGroup = 740AE58E208B2A39009430F9 /* Products */;
+			mainGroup = 74C02DB3208CD0C2009AB0F0;
+			productRefGroup = 74C02DBD208CD0C2009AB0F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				740AE58C208B2A39009430F9 /* 买卖股票 */,
+				74C02DBB208CD0C2009AB0F0 /* array */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		740AE589208B2A39009430F9 /* Sources */ = {
+		74C02DB8208CD0C2009AB0F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				740AE591208B2A39009430F9 /* main.cpp in Sources */,
+				74C02DC0208CD0C2009AB0F0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		740AE592208B2A39009430F9 /* Debug */ = {
+		74C02DC1208CD0C2009AB0F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -183,7 +183,7 @@
 			};
 			name = Debug;
 		};
-		740AE593208B2A39009430F9 /* Release */ = {
+		74C02DC2208CD0C2009AB0F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +234,7 @@
 			};
 			name = Release;
 		};
-		740AE595208B2A39009430F9 /* Debug */ = {
+		74C02DC4208CD0C2009AB0F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -243,7 +243,7 @@
 			};
 			name = Debug;
 		};
-		740AE596208B2A39009430F9 /* Release */ = {
+		74C02DC5208CD0C2009AB0F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -255,25 +255,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		740AE588208B2A39009430F9 /* Build configuration list for PBXProject "买卖股票" */ = {
+		74C02DB7208CD0C2009AB0F0 /* Build configuration list for PBXProject "array" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				740AE592208B2A39009430F9 /* Debug */,
-				740AE593208B2A39009430F9 /* Release */,
+				74C02DC1208CD0C2009AB0F0 /* Debug */,
+				74C02DC2208CD0C2009AB0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		740AE594208B2A39009430F9 /* Build configuration list for PBXNativeTarget "买卖股票" */ = {
+		74C02DC3208CD0C2009AB0F0 /* Build configuration list for PBXNativeTarget "array" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				740AE595208B2A39009430F9 /* Debug */,
-				740AE596208B2A39009430F9 /* Release */,
+				74C02DC4208CD0C2009AB0F0 /* Debug */,
+				74C02DC5208CD0C2009AB0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 740AE585208B2A39009430F9 /* Project object */;
+	rootObject = 74C02DB4208CD0C2009AB0F0 /* Project object */;
 }
