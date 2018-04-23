@@ -10,6 +10,10 @@
 #include <vector>
 using namespace std;
 
+int comp(const void * a, const void * b) {
+    return  (* ( int * ) a - * ( int * ) b);
+}
+
 class Solution {
 public:
     
@@ -53,17 +57,46 @@ public:
         }
         return num + 1;
     }
+    // https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/24/
+    
+    bool containsDuplicate(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        if (nums.empty()) {
+            return false;
+        }
+        for (int i = 0; i < nums.size() - 1; i++) {
+            if (nums[i] == nums[i+1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    // https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/25/
+    int singleNumber(vector<int>& nums) {
+        int m = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            m = nums[i] ^ m;
+        }
+        return m;
+    }
+    
+    // https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/26/
+//    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+//        
+//    }
 };
 
 int main(int argc, const char * argv[]) {
-    vector<int> nums = {1,1,2,2,3,6,7};
+    vector<int> nums = {1,2,3,2,1};
     Solution solution;
 //    int k = 0;
 //    cin >> k;
 //    solution.rotate(nums, k);
-    int n = solution.removeDuplicates(nums);
-    for (int  i = 0; i < n; i ++) {
-        cout << nums[i] << endl;
-    }
+//    int n = solution.removeDuplicates(nums);
+    cout << solution.singleNumber(nums);
+//    for (int  i = 0; i < nums.size(); i ++) {
+//        cout << nums[i] << endl;
+//    }
+    
     return 0;
 }
