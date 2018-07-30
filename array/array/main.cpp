@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <math.h>
 using namespace std;
 
 int comp(const void * a, const void * b) {
@@ -81,22 +82,54 @@ public:
     }
     
     // https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/26/
-//    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
-//        
-//    }
+    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> intersectVector;
+        sort(nums1.begin(), nums1.end());
+        sort(nums2.begin(), nums2.end());
+        int pointNums1 = 0, pointNums2 = 0;
+        while (pointNums1 < nums1.size() && pointNums2 < nums2.size()) {
+            if (nums1[pointNums1] == nums2[pointNums2]) {
+                intersectVector.push_back(nums1[pointNums1]);
+                pointNums1++;
+                pointNums2++;
+            } else if(nums1[pointNums1] < nums2[pointNums2]) {
+                pointNums1 ++;
+               
+            } else {
+                pointNums2++;
+            }
+        }
+        return intersectVector;
+    }
+
+//    https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/27/
+    vector<int> plusOne(vector<int>& digits) {
+        unsigned long count = digits.size();
+        vector<int> addDigits(count + 1,0);
+        for (int i = count-1; i >= 0 ; i--) {
+            if (digits[i] < 9) {
+                ++digits[i];
+                return digits;
+            }
+            digits[i] = 0;
+        }
+        addDigits[0] = 1;
+        return addDigits;
+    }
 };
 
 int main(int argc, const char * argv[]) {
-    vector<int> nums = {1,2,3,2,1};
+    vector<int> nums1 = {9,9,9,9};
+//    vector<int> nums2 = {2, 2};
     Solution solution;
 //    int k = 0;
 //    cin >> k;
-//    solution.rotate(nums, k);
+    vector<int> nums =  solution.plusOne(nums1);
 //    int n = solution.removeDuplicates(nums);
-    cout << solution.singleNumber(nums);
-//    for (int  i = 0; i < nums.size(); i ++) {
-//        cout << nums[i] << endl;
-//    }
+//    cout << solution.singleNumber(nums);
+    for (int  i = 0; i < nums.size(); i++) {
+        cout << nums[i] << endl;
+    }
     
     return 0;
 }

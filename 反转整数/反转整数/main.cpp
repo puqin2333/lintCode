@@ -33,9 +33,17 @@ public:
 };
 
 int main(int argc, const char * argv[]) {
-    Solution solution;
-    int n;
-    cin >> n;
-    cout << solution.reserveNumber(n) << endl;
+    
+//    Solution solution;
+//
+//    int n;
+//    cin >> n;
+//    cout << solution.reserveNumber(n) << endl;
+    char *p;
+    char s[] = "hi,sdfsf sdf";
+    p = s;
+    p += 6;
+    cout << p ;
+    
     return 0;
 }
