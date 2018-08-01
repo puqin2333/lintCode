@@ -116,15 +116,29 @@ public:
         addDigits[0] = 1;
         return addDigits;
     }
+//    https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/28/
+    void moveZeroes(vector<int>& nums) {
+        unsigned long count = nums.size();
+        int zeroNum=0;
+        for(int i=0;i < count;i++){
+            if(nums[i]==0) {
+                zeroNum++;
+            }else if(zeroNum!=0) {
+                nums[i-zeroNum]=nums[i];
+                nums[i]=0;
+            }
+        }
+
+    }
 };
 
 int main(int argc, const char * argv[]) {
-    vector<int> nums1 = {9,9,9,9};
+    vector<int> nums = {0, 1, 0 , 3 ,12};
 //    vector<int> nums2 = {2, 2};
     Solution solution;
 //    int k = 0;
 //    cin >> k;
-    vector<int> nums =  solution.plusOne(nums1);
+    solution.moveZeroes(nums);
 //    int n = solution.removeDuplicates(nums);
 //    cout << solution.singleNumber(nums);
     for (int  i = 0; i < nums.size(); i++) {
