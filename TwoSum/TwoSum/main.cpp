@@ -23,23 +23,41 @@ using namespace std;
 
 class Solution {
 public:
+//    vector<int> twoSum(vector<int>& nums, int target) {
+//        vector<int> subscript;
+//        map<int ,int> twoSum;
+//        int i = 0;
+//        while (i < nums.size()) {
+//            twoSum[nums[i]] = i;
+//            i++;
+//        }
+//        for (int i = 0; i < nums.size(); i++) {
+//            int otherNums = target - nums[i];
+//            if (twoSum.count(otherNums) && twoSum[otherNums] != i) {
+//                subscript.push_back(i);
+//                subscript.push_back(twoSum[otherNums]);
+//                break;
+//            }
+//        }
+//        return subscript;
+//    }
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> subscript;
-        map<int ,int> twoSum;
+        vector<int> subScript;
+        map<int, int> twoSum;
         int i = 0;
-        while (i < nums.size()) {
+        while(i < nums.size()) {
             twoSum[nums[i]] = i;
             i++;
         }
-        for (int i = 0; i < nums.size(); i++) {
-            int otherNums = target - nums[i];
-            if (twoSum.count(otherNums) && twoSum[otherNums] != i) {
-                subscript.push_back(i);
-                subscript.push_back(twoSum[otherNums]);
+        for(int j = 0; j < nums.size(); j++) {
+            int otherNum = target - nums[j];
+            if(twoSum.count(otherNum) && twoSum[otherNum] != j) {
+                subScript.push_back(j);
+                subScript.push_back(twoSum[otherNum]);
                 break;
             }
         }
-        return subscript;
+        return subScript;
     }
 };
 int main(int argc, const char * argv[]) {

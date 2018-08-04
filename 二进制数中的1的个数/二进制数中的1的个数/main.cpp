@@ -18,6 +18,21 @@ public:
         }
         return array;
     }
+    int brinaryGap(int num) {
+        int maxDistance = 0;
+        vector<int> array;
+        ScriptOf1(num, array);
+        if (array.size() <= 1) {
+            return 0;
+        }
+        for (int i = 0; i < array.size() - 1; i++) {
+            int n = array[i+1] - array[i];
+            if (n > maxDistance) {
+                maxDistance = n;
+            }
+        }
+        return maxDistance;
+    }
 private:
     int NumberOf1(int n) {
         int count = 0;
@@ -30,6 +45,18 @@ private:
         }
         return count;
     }
+    void ScriptOf1(int n, vector<int> &array) {
+        int script = 0;
+        unsigned int flag = 1;
+        while (flag) {
+            if (n & flag) {
+                array.push_back(script);
+            }
+            flag = flag << 1;
+            script++;
+        }
+
+    }
 };
 
 int main(int argc, const char * argv[]) {
@@ -37,10 +64,11 @@ int main(int argc, const char * argv[]) {
     cin >> num;
     vector<int> array;
     Solution solution;
-    array = solution.countBits(num);
-    for (int i = 0; i <= num; i++) {
-        cout << array[i] << endl;
-    }
+//    array = solution.countBits(num);
+//    for (int i = 0; i <= num; i++) {
+//        cout << array[i] << endl;
+//    }
+    cout << solution.brinaryGap(num) << endl;
     
     return 0;
 }

@@ -16,12 +16,7 @@ using namespace std;
 class Solution {
 public:
     bool Find(int target, vector<vector<int> > array) {
-//        int rowSize = (int)array.size() - 1;
-//        int lowSize = (int)array[1].size() - 1;
-//        int row = 0;
-//        while (row < rowSize && row) {
-//            <#statements#>
-//        }
+
         for (int i = 0;i < array.size() ;i++) {
             for (int j = array[i].size() - 1; j >= 0; j--) {
                 if (target == array[i][j]) {
@@ -31,6 +26,21 @@ public:
         }
         return false;
     }
+    /** 旋转图像，
+    给定一个 n × n 的二维矩阵表示一个图像。
+    将图像顺时针旋转 90 度。
+    https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/31/
+    **/
+    void rotate(vector<vector<int>>& matrix) {
+        int n = matrix.size();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++ ) {
+                swap(matrix[i][j], matrix[j][i]);
+            }
+            reverse(matrix[i].begin(), matrix[i].end());
+        }
+    }
+    
 };
 int main(int argc, const char * argv[]) {
     
